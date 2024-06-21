@@ -1,0 +1,31 @@
+input {
+    border: 3px solid rgb(116, 116, 116);
+    border-radius: 25px;
+    width: 500px;
+    padding: 0 2%;
+}
+
+#form-title {
+    font-size: 30px;
+}
+
+#add-task-btn {
+    color: #ffffff;
+    padding: 5px 20px;
+    background-color: rgba(42, 42, 128, 0.8);
+    border: 2px solid transparent;
+    border-radius: 25px;
+    font-weight: bold;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    &:hover {
+        color: #fff;
+        background-color: rgb(47, 119, 25);
+        transition: color 0.350s, background-color 0.350s;
+    }
+
+    &:not(:hover) {
+        transition: color 0.350s, background-color 0.350s;
+    }
+}

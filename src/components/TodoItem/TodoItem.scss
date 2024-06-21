@@ -1,0 +1,81 @@
+#complete-task-btn {
+    font-size: 12px;
+    color: #343484;
+    padding: 2px 5px;
+    border: 2px solid rgba(42, 42, 128, 0.8);
+    border-radius: 25px;
+    font-weight: bold;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    &:hover {
+        color: #fff;
+        background-color: rgba(42, 42, 128, 0.8);
+        transition: color 0.350s, background-color 0.350s;
+    }
+
+    &:not(:hover) {
+        transition: color 0.350s, background-color 0.350s;
+    }
+}
+
+#delete-task-btn {
+    font-size: 12px;
+    color: #A34143;
+    padding: 2px 5px;
+    border: 2px solid rgba(148, 24, 24, 0.8);
+    border-radius: 25px;
+    font-weight: bold;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    &:hover {
+        color: #fff;
+        background-color: rgba(148, 24, 24, 0.8);
+        transition: color 0.350s, background-color 0.350s;
+    }
+
+    &:not(:hover) {
+        transition: color 0.350s, background-color 0.350s;
+    }
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border: 2px solid #ddd;
+    margin: 5px 0;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.1s, border 0.1s, transform 0.1s, box-shadow 0.1s;
+
+    &:hover {
+        background-color: #ececec;
+        cursor: pointer;
+        transform: translateY(-2px); // Solleva leggermente la task
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); // Aumenta l'ombra per un effetto di sollevamento più marcato
+    }
+
+    span {
+        word-break: break-word;
+        white-space: normal;
+    }
+}
+
+
+
+.status-indicator {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+}
+
+.completed {
+    background-color: green;
+}
+
+.pending {
+    background-color: goldenrod;
+}

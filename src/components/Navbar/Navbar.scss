@@ -1,0 +1,32 @@
+#main-nav {
+    height: 85px;
+    background-color: rgba(42, 42, 128, 0.8);
+
+    #navbar-logo {
+        font-size: 40px;
+        font-weight: 800;
+        font-style: italic;
+    }
+
+    a {
+        color: #ffffff;
+        padding: 5px 20px;
+        background-color: rgba(42, 42, 128, 0.8);
+        border: 2px solid transparent;
+        border-radius: 25px;
+        font-weight: bold;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+
+        &:hover {
+            color: rgb(113, 198, 255);
+            border-color: rgb(113, 198, 255);
+            background-color: rgba(42, 42, 128);
+            transition: color 0.350s, border-color 0.350s;
+        }
+
+        &:not(:hover) {
+            transition: color 0.350s, border-color 0.350s;
+        }
+    }
+}
