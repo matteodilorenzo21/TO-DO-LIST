@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    background-color: #f4efef;
+}
+
 #task-section {
     display: flex;
     flex-direction: column;

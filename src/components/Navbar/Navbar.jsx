@@ -10,10 +10,10 @@ function Navbar() {
             <div className='container flex items-center     justify-center h-screen'>
                 <div id='navbar-logo' className='basis-1/3 flex'>
                     <h1 className='select-none'>
-                        <span className='text-cyan-500'>TO</span>
-                        <span className='text-amber-200'>DO</span>
+                        <span className='text-white'>TO</span>
+                        <span style={{ color: '#EEBE22' }}>DO</span>
                         <span className='text-white'>LIST</span>
-                        <span className='text-sm text-gray-300 '>v 1.0.0</span>
+                        <span className='text-sm text-gray-300 '>v 1.0.1</span>
                     </h1>
                 </div>
 
@@ -37,7 +37,7 @@ function Navbar() {
                 <div className='basis-1/3'></div>
             </div>
 
-        </nav>
+        </nav >
     )
 }
 

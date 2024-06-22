@@ -1,8 +1,8 @@
 input {
-    border: 3px solid rgb(116, 116, 116);
-    border-radius: 25px;
+    border: 1px solid rgb(116, 116, 116);
+    border-radius: 4px;
     width: 500px;
-    padding: 0 2%;
+    padding: 0.8% 2%;
 }
 
 #form-title {
@@ -11,10 +11,10 @@ input {
 
 #add-task-btn {
     color: #ffffff;
-    padding: 5px 20px;
+    padding: 0.8% 2%;
     background-color: rgba(42, 42, 128, 0.8);
     border: 2px solid transparent;
-    border-radius: 25px;
+    border-radius: 4px;
     font-weight: bold;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);

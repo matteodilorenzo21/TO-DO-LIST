@@ -12,15 +12,15 @@ function TodoList({ todos, toggleComplete, deleteTodo }) {
                         key={todo.id}
                         timeout={500}
                         classNames="todo"
-                        nodeRef={todo.nodeRef} // Assicurati di aggiungere nodeRef correttamente
+                        nodeRef={todo.nodeRef}
                     >
-                        <li ref={todo.nodeRef} className="todo"> {/* Usa nodeRef direttamente */}
+                        <li ref={todo.nodeRef} className="todo">
                             <TodoItem
                                 key={todo.id}
                                 todo={todo}
                                 toggleComplete={toggleComplete}
                                 deleteTodo={deleteTodo}
-                                nodeRef={todo.nodeRef} // Assicurati di passare nodeRef a TodoItem
+                                nodeRef={todo.nodeRef}
                             />
                         </li>
                     </CSSTransition>
