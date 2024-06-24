@@ -16,6 +16,7 @@ export default function SelectLabels({ filter, setFilter, totalCount, incomplete
                 onChange={handleChange}
                 displayEmpty
                 inputProps={{ 'aria-label': 'Without label' }}
+                style={{ padding: '1% 2%' }}
             >
                 <MenuItem value="all">
                     <p>Tutti ({totalCount})</p>

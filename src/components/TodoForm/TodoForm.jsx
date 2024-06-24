@@ -3,15 +3,30 @@ import './TodoForm.scss';
 import AddIcon from '@mui/icons-material/Add';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import SelectLabels from '../SelectLabels/SelectLabels';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
-function TodoForm({ addTodo, incompleteTasks, filter, setFilter, incompleteCount, completedCount, totalCount }) {
+function TodoForm({ addTodo, incompleteTasks, filter, setFilter, incompleteCount, completedCount, totalCount, deleteAllTodos }) {
     const [input, setInput] = useState('');
+    const [openSnackbar, setOpenSnackbar] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!input) return;
         addTodo(input);
         setInput('');
+    };
+
+    const handleDeleteAll = () => {
+        deleteAllTodos();
+        setOpenSnackbar(true);
+    };
+
+    const handleSnackbarClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        setOpenSnackbar(false);
     };
 
     return (
@@ -41,7 +56,25 @@ function TodoForm({ addTodo, incompleteTasks, filter, setFilter, incompleteCount
                     incompleteCount={incompleteCount}
                     completedCount={completedCount}
                 />
+                <button
+                    id='delete-all-btn'
+                    variant="contained"
+                    onClick={handleDeleteAll}
+                    className='mx-2'
+                >
+                    Rimuovi tutti
+                </button>
             </form>
+            <Snackbar
+                open={openSnackbar}
+                autoHideDuration={5000}
+                onClose={handleSnackbarClose}
+            >
+                <Alert onClose={handleSnackbarClose} variant='filled'
+                    style={{ backgroundColor: 'rgb(42, 42, 128)' }}>
+                    Tutti i Tasks sono stati eliminati con successo
+                </Alert>
+            </Snackbar>
         </div>
     );
 }

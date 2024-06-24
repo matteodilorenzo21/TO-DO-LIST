@@ -7,7 +7,7 @@ function Navbar() {
     return (
         <nav id='main-nav' className='flex items-center justify-center h-screen px-5'>
 
-            <div className='container flex items-center     justify-center h-screen'>
+            <div className='container flex items-center justify-center h-screen'>
                 <div id='navbar-logo' className='basis-1/3 flex'>
                     <h1 className='select-none'>
                         <span className='text-white'>TO</span>

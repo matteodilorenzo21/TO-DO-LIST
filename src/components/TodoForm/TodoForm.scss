@@ -29,3 +29,25 @@ input {
         transition: color 0.350s, background-color 0.350s;
     }
 }
+
+#delete-all-btn {
+    width: 20%;
+    color: #ffffff;
+    padding: 0.85% 2%;
+    background-color: rgba(42, 42, 128, 0.8);
+    border: 2px solid transparent;
+    border-radius: 4px;
+    font-weight: bold;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    &:hover {
+        color: #fff;
+        background-color: rgba(148, 24, 24, 0.8);
+        transition: color 0.350s, background-color 0.350s;
+    }
+
+    &:not(:hover) {
+        transition: color 0.350s, background-color 0.350s;
+    }
+}

@@ -26,6 +26,10 @@ function App() {
     setTodos(todos.filter(todo => todo.id !== id));
   };
 
+  const deleteAllTodos = () => {
+    setTodos([]);
+  };
+
   const filteredTodos = todos
     .filter(todo => {
       if (filter === 'todo') return !todo.completed;
@@ -54,6 +58,7 @@ function App() {
           incompleteCount={incompleteTasks}
           completedCount={completedTasks}
           totalCount={todos.length}
+          deleteAllTodos={deleteAllTodos}
         />
         <TodoList todos={filteredTodos} toggleComplete={toggleComplete} deleteTodo={deleteTodo} />
       </section>
