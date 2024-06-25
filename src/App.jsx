@@ -4,14 +4,20 @@ import './tailwind.scss';
 import Navbar from './components/Navbar/Navbar';
 import TodoList from './components/TodoList/TodoList';
 import TodoForm from './components/TodoForm/TodoForm';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 function App() {
   const [todos, setTodos] = useState([]);
   const [filter, setFilter] = useState('all');
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
+  const [alertSeverity, setAlertSeverity] = useState('success');
 
   const addTodo = (text) => {
-    const newTodo = { id: Date.now(), text, completed: false, completionDate: null };
+    const newTodo = { id: Date.now(), text, completed: false, completionDate: null, nodeRef: React.createRef() };
     setTodos([...todos, newTodo]);
+    showSnackbar('Task creato con successo', 'success');
   };
 
   const toggleComplete = (id) => {
@@ -24,10 +30,29 @@ function App() {
 
   const deleteTodo = (id) => {
     setTodos(todos.filter(todo => todo.id !== id));
+    showSnackbar('Task eliminato con successo', 'success');
   };
 
   const deleteAllTodos = () => {
+    if (todos.length === 0) {
+      showSnackbar('Non ci sono task da eliminare', 'warning');
+      return;
+    }
     setTodos([]);
+    showSnackbar(todos.length + ' tasks sono stati eliminati con successo', 'info');
+  };
+
+  const showSnackbar = (message, severity) => {
+    setAlertMessage(message);
+    setAlertSeverity(severity);
+    setOpenSnackbar(true);
+  };
+
+  const handleSnackbarClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpenSnackbar(false);
   };
 
   const filteredTodos = todos
@@ -60,8 +85,22 @@ function App() {
           totalCount={todos.length}
           deleteAllTodos={deleteAllTodos}
         />
-        <TodoList todos={filteredTodos} toggleComplete={toggleComplete} deleteTodo={deleteTodo} />
+        <TodoList
+          todos={filteredTodos}
+          toggleComplete={toggleComplete}
+          deleteTodo={deleteTodo}
+        />
       </section>
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={4000}
+        onClose={handleSnackbarClose}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+      >
+        <Alert onClose={handleSnackbarClose} severity={alertSeverity} variant='filled'>
+          {alertMessage}
+        </Alert>
+      </Snackbar>
     </>
   );
 }

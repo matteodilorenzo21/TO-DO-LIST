@@ -7,6 +7,7 @@ import CheckCircleOutlineSharpIcon from '@mui/icons-material/CheckCircleOutlineS
 import TimerSharpIcon from '@mui/icons-material/TimerSharp';
 
 function TodoItem({ todo, toggleComplete, deleteTodo, nodeRef }) {
+
     const formatCompletionDate = (date) => {
         if (!date) return '';
         const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };

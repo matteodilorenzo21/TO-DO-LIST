@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import TodoItem from '../TodoItem/TodoItem';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import './TodoList.scss';

@@ -9,7 +9,7 @@ export default function SelectLabels({ filter, setFilter, totalCount, incomplete
     };
 
     return (
-        <FormControl sx={{ m: 1, minWidth: 150 }} size="small">
+        <FormControl sx={{ m: 1, minWidth: 160 }} size="small">
             <Select
                 labelId="filter-label"
                 value={filter}
