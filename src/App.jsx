@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import './App.scss';
 import './tailwind.scss';
 import Navbar from './components/Navbar/Navbar';
 import TodoList from './components/TodoList/TodoList';
@@ -17,7 +17,7 @@ function App() {
   const addTodo = (text) => {
     const newTodo = { id: Date.now(), text, completed: false, completionDate: null, nodeRef: React.createRef() };
     setTodos([...todos, newTodo]);
-    showSnackbar('Task creato con successo', 'success');
+    showSnackbar('Task creato con successo', 'info');
   };
 
   const toggleComplete = (id) => {
@@ -30,7 +30,7 @@ function App() {
 
   const deleteTodo = (id) => {
     setTodos(todos.filter(todo => todo.id !== id));
-    showSnackbar('Task eliminato con successo', 'success');
+    showSnackbar('Task eliminato con successo', 'info');
   };
 
   const deleteAllTodos = () => {

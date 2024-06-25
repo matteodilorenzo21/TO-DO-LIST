@@ -1,8 +1,10 @@
+@import "../../main.scss";
+
 #complete-task-btn {
     font-size: 12px;
-    color: #343484;
+    color: $hover-primary;
     padding: 2px 5px;
-    border: 2px solid rgba(42, 42, 128, 0.8);
+    border: 2px solid $color-primary-08;
     border-radius: 25px;
     font-weight: bold;
     backdrop-filter: blur(10px);
@@ -10,7 +12,7 @@
 
     &:hover {
         color: #fff;
-        background-color: rgba(42, 42, 128, 0.8);
+        background-color: $color-primary-08;
         transition: color 0.350s, background-color 0.350s;
     }
 
@@ -23,7 +25,7 @@
     font-size: 12px;
     color: #A34143;
     padding: 2px 5px;
-    border: 2px solid rgba(148, 24, 24, 0.8);
+    border: 2px solid $hover-delete;
     border-radius: 25px;
     font-weight: bold;
     backdrop-filter: blur(10px);
@@ -31,7 +33,7 @@
 
     &:hover {
         color: #fff;
-        background-color: rgba(148, 24, 24, 0.8);
+        background-color: $hover-delete;
         transition: color 0.350s, background-color 0.350s;
     }
 
@@ -53,8 +55,8 @@
     &:hover {
         background-color: #e7ecf5;
         cursor: pointer;
-        transform: translateY(-2px); // Solleva leggermente la task
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); // Aumenta l'ombra per un effetto di sollevamento più marcato
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     }
 
     span {

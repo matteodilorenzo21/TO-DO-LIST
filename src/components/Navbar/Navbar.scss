@@ -1,7 +1,9 @@
+@import '../../main.scss';
+
 #main-nav {
     height: 75px;
-    background-color: rgba(42, 42, 128, 0.8);
-    background: linear-gradient(90deg, rgb(44, 44, 112) 0%, rgba(42, 42, 128, 0.8) 100%);
+    background-color: $color-primary-08;
+    background: linear-gradient(90deg, rgb(44, 44, 112) 0%, $color-primary-08 100%);
     border-bottom: 3px solid rgba(0, 0, 0, 0.1);
 
     #navbar-logo {
@@ -13,7 +15,7 @@
     a {
         color: #ffffff;
         padding: 5px 20px;
-        background-color: rgba(42, 42, 128, 0.8);
+        background-color: $color-primary-08;
         border: 2px solid transparent;
         border-radius: 25px;
         font-weight: bold;
@@ -23,7 +25,7 @@
         &:hover {
             color: rgb(113, 198, 255);
             border-color: rgb(113, 198, 255);
-            background-color: rgba(42, 42, 128);
+            background-color: $color-primary;
             transition: color 0.350s, border-color 0.350s;
         }
 
